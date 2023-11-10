@@ -1,5 +1,9 @@
 package com.jpabook.jpashop;
 
+import com.jpabook.jpashop.domain.Order;
+import com.jpabook.jpashop.domain.OrderItem;
+import org.aspectj.weaver.ast.Or;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -16,6 +20,9 @@ public class JpaMain {
     tx.begin();
 
     try{
+
+        Order order = new Order();
+        order.addOrderItem(new OrderItem());
 
         tx.commit();
 
